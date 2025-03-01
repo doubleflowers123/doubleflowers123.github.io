@@ -1,22 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Categories - Category - Xuan</title>
-        <link>http://example.org/categories/</link>
-        <description>Categories - Category - Xuan</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 22 Jan 2025 13:31:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/" rel="self" type="application/rss+xml" /><item>
+        <title>Categories - 分类 - Xuan</title>
+        <link>https://example.com/categories/</link>
+        <description>Categories - 分类 - Xuan</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 22 Jan 2025 13:31:00 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/" rel="self" type="application/rss+xml" /><item>
     <title>Vue</title>
-    <link>http://example.org/categories/vue/</link>
+    <link>https://example.com/categories/vue/</link>
     <pubDate>Wed, 22 Jan 2025 13:31:00 &#43;0800</pubDate>
-    <author>Xuan</author>
-    <guid>http://example.org/categories/vue/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Unreal Shader</title>
-    <link>http://example.org/categories/unreal-shader/</link>
-    <pubDate>Sun, 22 Dec 2024 13:31:00 &#43;0800</pubDate>
-    <author>Xuan</author>
-    <guid>http://example.org/categories/unreal-shader/</guid>
+    <author>xxxx</author>
+    <guid>https://example.com/categories/vue/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

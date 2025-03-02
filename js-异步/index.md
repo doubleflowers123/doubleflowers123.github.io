@@ -1,0 +1,60 @@
+# js 异步
+
+
+### Promise
+
+```js
+1:异步处理的场景：
+ -网络请求 -定时任务 -事件处理 -大量数据的处理
+ 异步处理的策略
+ -回调函数  -Promise -Async/await -事件监听 -发布订阅模式 -web worker -Generator函数 -Promise.all-预加载资源
+2.promise的特性
+  1.执行了resolve -fulfilled
+  2.执行了reject - rejected
+  3.promise状态不可逆
+  4.promise 有throw 
+  5.then 方法，接收两个状态 成功和失败   catch
+     promise fulfiled 成功
+     promi 
+  6.resolve reject 在定时器中执行，定时器结束后执行后续的t hen
+  7.链式调用---返回新的promise实例，返回值是promise对象,返回成功
+             返回非promise对象，新的promise对象成功，值作为返回值
+  8.执行顺序
+  9 all方法，参数是一个数组，所有promise都成功，成功结果数组，有一个失败，返回这个失败的结果
+  10.race，参数是一个数组，哪个promise最快返回结果就返回那个结果，无论成功失败
+  11.allSettled：无论成功过失败，，每个结果，集合数组返回
+  12.any:有一个成功则返回结果
+           
+
+ 
+```
+
+### Async/await
+
+```js
+1.用同步的方式支持异步的操作
+2.await只能在async 函数中使用
+3.async 函数返回一个promise对象，有无值看当前是否有return值
+4.await 最好接promise
+有的浏览器不支持async/await 可以使用generator ,yield支持函数，promise,支持传参
+function fun (num){
+  console.log(num)
+  reuturn num
+}
+function* gen(){
+    yield function(1)
+    yield function(2)
+    yield function(3)
+    return 4
+}
+const g = gen()
+console.log(g.next()) 返回一个对象{value:1,done:false}
+console.log(g.next()) 返回一个对象{value:1,done:false}
+console.log(g.next()) 返回一个对象{value:1,done:false}
+console.log(g.next()) 返回一个对象{value:1,done:true},为true就结束
+
+```
+
+
+
+

@@ -3,15 +3,69 @@
         <title>Xuan</title>
         <link>https://example.com/</link>
         <description>一个艺术世界</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 22 Jan 2025 13:31:00 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 22 Jan 2024 13:31:00 &#43;0800</lastBuildDate>
             <atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Vue</title>
-    <link>https://example.com/vue/</link>
-    <pubDate>Wed, 22 Jan 2025 13:31:00 &#43;0800</pubDate>
+    <title>js 异步</title>
+    <link>https://example.com/js-%E5%BC%82%E6%AD%A5/</link>
+    <pubDate>Mon, 22 Jan 2024 13:31:00 &#43;0800</pubDate>
     <author>Flower</author>
-    <guid>https://example.com/vue/</guid>
-    <description><![CDATA[<h1 id="vue">Vue</h1>]]></description>
+    <guid>https://example.com/js-%E5%BC%82%E6%AD%A5/</guid>
+    <description><![CDATA[<h3 id="promise">Promise</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="mi">1</span><span class="o">:</span><span class="nx">异步处理的场景</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"> <span class="o">-</span><span class="nx">网络请求</span> <span class="o">-</span><span class="nx">定时任务</span> <span class="o">-</span><span class="nx">事件处理</span> <span class="o">-</span><span class="nx">大量数据的处理</span>
+</span></span><span class="line"><span class="cl"> <span class="nx">异步处理的策略</span>
+</span></span><span class="line"><span class="cl"> <span class="o">-</span><span class="nx">回调函数</span>  <span class="o">-</span><span class="nb">Promise</span> <span class="o">-</span><span class="nx">Async</span><span class="o">/</span><span class="kr">await</span> <span class="o">-</span><span class="nx">事件监听</span> <span class="o">-</span><span class="nx">发布订阅模式</span> <span class="o">-</span><span class="nx">web</span> <span class="nx">worker</span> <span class="o">-</span><span class="nx">Generator函数</span> <span class="o">-</span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="o">-</span><span class="nx">预加载资源</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span><span class="nx">promise的特性</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">1.</span><span class="nx">执行了resolve</span> <span class="o">-</span><span class="nx">fulfilled</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">2.</span><span class="nx">执行了reject</span> <span class="o">-</span> <span class="nx">rejected</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">3.</span><span class="nx">promise状态不可逆</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">4.</span><span class="nx">promise</span> <span class="nx">有throw</span> 
+</span></span><span class="line"><span class="cl">  <span class="mf">5.</span><span class="nx">then</span> <span class="nx">方法</span><span class="err">，</span><span class="nx">接收两个状态</span> <span class="nx">成功和失败</span>   <span class="k">catch</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">promise</span> <span class="nx">fulfiled</span> <span class="nx">成功</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">promi</span> 
+</span></span><span class="line"><span class="cl">  <span class="mf">6.</span><span class="nx">resolve</span> <span class="nx">reject</span> <span class="nx">在定时器中执行</span><span class="err">，</span><span class="nx">定时器结束后执行后续的t</span> <span class="nx">hen</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">7.</span><span class="nx">链式调用</span><span class="o">---</span><span class="nx">返回新的promise实例</span><span class="err">，</span><span class="nx">返回值是promise对象</span><span class="p">,</span><span class="nx">返回成功</span>
+</span></span><span class="line"><span class="cl">             <span class="nx">返回非promise对象</span><span class="err">，</span><span class="nx">新的promise对象成功</span><span class="err">，</span><span class="nx">值作为返回值</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">8.</span><span class="nx">执行顺序</span>
+</span></span><span class="line"><span class="cl">  <span class="mi">9</span> <span class="nx">all方法</span><span class="err">，</span><span class="nx">参数是一个数组</span><span class="err">，</span><span class="nx">所有promise都成功</span><span class="err">，</span><span class="nx">成功结果数组</span><span class="err">，</span><span class="nx">有一个失败</span><span class="err">，</span><span class="nx">返回这个失败的结果</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">10.</span><span class="nx">race</span><span class="err">，</span><span class="nx">参数是一个数组</span><span class="err">，</span><span class="nx">哪个promise最快返回结果就返回那个结果</span><span class="err">，</span><span class="nx">无论成功失败</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">11.</span><span class="nx">allSettled</span><span class="err">：</span><span class="nx">无论成功过失败</span><span class="err">，，</span><span class="nx">每个结果</span><span class="err">，</span><span class="nx">集合数组返回</span>
+</span></span><span class="line"><span class="cl">  <span class="mf">12.</span><span class="nx">any</span><span class="o">:</span><span class="nx">有一个成功则返回结果</span>
+</span></span><span class="line"><span class="cl">           
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> 
+</span></span></code></pre></div></div><h3 id="asyncawait">Async/await</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="mf">1.</span><span class="nx">用同步的方式支持异步的操作</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span><span class="nx">await只能在async</span> <span class="nx">函数中使用</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span><span class="kr">async</span> <span class="nx">函数返回一个promise对象</span><span class="err">，</span><span class="nx">有无值看当前是否有return值</span>
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span><span class="kr">await</span> <span class="nx">最好接promise</span>
+</span></span><span class="line"><span class="cl"><span class="nx">有的浏览器不支持async</span><span class="o">/</span><span class="kr">await</span> <span class="nx">可以使用generator</span> <span class="p">,</span><span class="nx">yield支持函数</span><span class="err">，</span><span class="nx">promise</span><span class="p">,</span><span class="nx">支持传参</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">fun</span> <span class="p">(</span><span class="nx">num</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">reuturn</span> <span class="nx">num</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span><span class="o">*</span> <span class="nx">gen</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="kd">function</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="kd">function</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">yield</span> <span class="kd">function</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">gen</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="nx">返回一个对象</span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="nx">done</span><span class="o">:</span><span class="kc">false</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="nx">返回一个对象</span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="nx">done</span><span class="o">:</span><span class="kc">false</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="nx">返回一个对象</span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="nx">done</span><span class="o">:</span><span class="kc">false</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="nx">返回一个对象</span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="nx">done</span><span class="o">:</span><span class="kc">true</span><span class="p">},</span><span class="nx">为true就结束</span></span></span></code></pre></div></div>]]></description>
 </item>
 </channel>
 </rss>

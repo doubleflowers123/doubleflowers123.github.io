@@ -5,31 +5,240 @@
         <description>Js - 分类 - Xuan</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 22 Jan 2022 13:31:00 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/js/" rel="self" type="application/rss+xml" /><item>
     <title>js</title>
-    <link>https://example.com/js-%E5%BC%82%E6%AD%A5/</link>
+    <link>https://example.com/js/</link>
     <pubDate>Sat, 22 Jan 2022 13:31:00 &#43;0800</pubDate>
     <author>Flower</author>
-    <guid>https://example.com/js-%E5%BC%82%E6%AD%A5/</guid>
-    <description><![CDATA[<h1 id="说说javascript中的数据类型存储上的差别">说说JavaScript中的数据类型？存储上的差别？</h1>
-<p></p>
-<h2 id="前言">前言</h2>
-<p>在<code>JavaScript</code>中，我们可以分成两种类型：</p>
-<ul>
-<li>基本类型</li>
-<li>复杂类型</li>
-</ul>
-<p>两种类型的区别是：存储位置不同</p>
-<h2 id="基本类型">基本类型</h2>
-<p>基本类型主要为以下6种：</p>
-<ul>
-<li>Number</li>
-<li>String</li>
-<li>Boolean</li>
-<li>Undefined</li>
-<li>null</li>
-<li>symbol</li>
-</ul>
-<h3 id="number">Number</h3>
-<p>数值最常见的整数类型格式则为十进制，还可以设置八进制（零开头）、十六进制（0x开头）</p>]]></description>
+    <guid>https://example.com/js/</guid>
+    <description><![CDATA[<h3 id="js1-js的数据类型有哪些以及转换">JS1 js的数据类型有哪些（以及转换）</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">答</span><span class="o">:</span> <span class="nx">简单数据类型</span><span class="o">:</span> <span class="nx">number</span> <span class="nx">string</span> <span class="kr">boolean</span> <span class="kc">undefined</span>   <span class="kc">null</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">复杂数据类型</span><span class="o">:</span> <span class="nx">object</span>  <span class="kd">function</span>  <span class="nx">array</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">数据类型转换</span><span class="err">：</span> 
+</span></span><span class="line"><span class="cl">    <span class="nx">转数字类型</span><span class="err">：</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">整数</span><span class="p">)</span>  <span class="nb">parseFloat</span><span class="err">（</span><span class="nx">小数</span><span class="err">）</span>  <span class="nb">Number</span><span class="err">（</span><span class="nx">不明确类型转换</span><span class="err">）</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">转字符串类型</span><span class="err">：</span> <span class="nx">xx</span><span class="o">+</span><span class="s1">&#39;&#39;</span>   <span class="nx">toString</span><span class="p">()</span> <span class="nx">null和undefined没有这个方法</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">转布尔类型</span><span class="err">：</span> <span class="nb">Boolean</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl">     <span class="nx">除了</span> <span class="mi">0</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="err">（</span><span class="nx">空引号</span><span class="err">）</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span><span class="nx">NAN</span> <span class="err">，</span><span class="nx">不成立的表达式</span> <span class="nx">是false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">其他均为true</span><span class="p">,</span><span class="nx">一般用于if</span><span class="p">(</span><span class="nx">条件判断</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">隐式转换</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">a</span><span class="p">.</span><span class="nx">当加号的左边没有数字</span><span class="err">，</span><span class="nx">后面有数字</span><span class="err">，</span><span class="nx">加号被解析成正号</span><span class="err">，</span><span class="o">+</span><span class="nx">号后面一定是数字类型</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span><span class="p">.</span><span class="nx">任何数据和字符串相加都是字符串</span><span class="err">，</span><span class="nx">除了NAN</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">c</span><span class="p">.</span><span class="nx">只要跟NAN沾边</span><span class="err">，</span><span class="nx">一定是NAN</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">字符串和NAN相加是字符串的NAN</span><span class="err">，</span><span class="nx">typeOf类型是字符串</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">d</span><span class="p">.</span><span class="nx">精度丢失</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">    <span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span> <span class="o">=</span> <span class="mf">0.30000000000000004</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">计算机会把它转成二进制计算</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">解决精度丢失问题</span><span class="err">：</span><span class="nx">扩大到整数去运算</span>
+</span></span><span class="line"><span class="cl">    <span class="p">((</span><span class="mf">0.1</span><span class="o">*</span><span class="mi">100</span><span class="o">+</span><span class="mf">0.2</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span><span class="o">/</span><span class="mi">100</span> <span class="o">=</span><span class="mf">0.3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">+</span><span class="nx">号的上下文</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="nx">a</span><span class="p">.</span><span class="nx">当加号左边没有数字</span><span class="err">，</span><span class="nx">只有右边有数字</span><span class="err">，</span><span class="nx">加号被解析成正号</span><span class="err">，</span><span class="nx">正号后面一定是数字类型</span>
+</span></span><span class="line"><span class="cl"><span class="nx">b</span><span class="p">.</span><span class="nx">加号两边都是数字</span><span class="err">，</span><span class="nx">加号就是运算符</span>
+</span></span><span class="line"><span class="cl"><span class="nx">c</span><span class="p">.</span><span class="o">+</span><span class="nx">号的左右如果有一个数据是字符串数据类型的话</span>  <span class="nx">那么这个</span><span class="o">+</span><span class="nx">号会被解析成连接符</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">字符串的拼接</span><span class="err">：</span><span class="s1">&#39;+变量+&#39;</span>    <span class="nx">模板字符串</span> <span class="sb">`</span><span class="si">${</span><span class="nx">变量</span><span class="si">}</span><span class="sb">`</span></span></span></code></pre></div></div><h3 id="js2-typeof返回的数据类型">JS2 typeof返回的数据类型</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">答</span><span class="o">:</span> <span class="nx">number</span> <span class="nx">string</span> <span class="kr">boolean</span> <span class="kc">undefined</span>  <span class="nx">object</span>  <span class="kd">function</span> 
+</span></span><span class="line"><span class="cl">   <span class="nx">特殊情况</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">   <span class="k">typeof</span> <span class="kc">null</span> <span class="o">--&gt;</span><span class="nx">object</span>
+</span></span><span class="line"><span class="cl">   <span class="k">typeof</span> <span class="nx">array</span> <span class="o">--&gt;</span><span class="nx">object</span>
+</span></span><span class="line"><span class="cl">   <span class="k">typeof</span> <span class="kd">function</span> <span class="o">--&gt;</span> <span class="kd">function</span>
+</span></span><span class="line"><span class="cl">   <span class="k">typeof</span> <span class="k">typeof</span> <span class="nx">任何类型</span>  <span class="o">--&gt;</span><span class="nx">string</span>
+</span></span><span class="line"><span class="cl">   <span class="nb">isNaN</span><span class="p">()</span> <span class="nx">判断是否为NAN</span><span class="err">，</span><span class="nx">返回布尔值true</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">复杂数据类型判断</span>
+</span></span><span class="line"><span class="cl"><span class="nx">p</span> <span class="k">instanceof</span> <span class="nb">Array</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">返回布尔值</span> <span class="nx">看这个实例是不是有构造函数创建出来的</span></span></span></code></pre></div></div><h3 id="js3-运算符及优先级">JS3 运算符及优先级</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">答</span><span class="o">:</span> 
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span><span class="nx">赋值运算符</span>
+</span></span><span class="line"><span class="cl">   <span class="o">=</span>  <span class="nx">将符号右边的内容赋值到左边去</span><span class="err">，</span><span class="nx">左边必须是个容器</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">累加</span> <span class="nx">a</span><span class="o">+</span> <span class="o">=</span> <span class="mi">10</span>  <span class="p">=&gt;</span>  <span class="nx">a</span><span class="o">=</span><span class="nx">a</span><span class="o">+</span><span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span><span class="nx">自增自减运算符</span>
+</span></span><span class="line"><span class="cl"><span class="nx">变量</span><span class="o">++</span>   <span class="nx">先使用</span><span class="err">，</span><span class="nx">再自增</span>
+</span></span><span class="line"><span class="cl"><span class="o">++</span><span class="nx">变量</span>   <span class="nx">先自增</span><span class="err">，</span><span class="nx">再使用</span>
+</span></span><span class="line"><span class="cl"><span class="nx">共同点都在原来及基础上加1</span><span class="err">，</span> <span class="nx">类似</span> <span class="nx">a</span><span class="o">=</span><span class="nx">a</span><span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">面试题</span><span class="err">：</span> <span class="err">（</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="nx">模板</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="o">++</span><span class="nx">a</span> <span class="o">+</span> <span class="o">++</span><span class="nx">a</span><span class="p">;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>   <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="o">++</span> <span class="o">+</span> <span class="o">++</span><span class="nx">a</span><span class="p">;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>   <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span><span class="o">++</span> <span class="o">+</span> <span class="nx">a</span><span class="o">++</span><span class="p">;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>   <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"> <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="o">++</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">a</span><span class="o">++</span><span class="p">;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>   <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">5</span><span class="o">++</span><span class="p">)</span> <span class="nx">报错</span><span class="err">（</span><span class="nx">存储容器</span><span class="err">）</span>                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">++</span><span class="mi">5</span><span class="p">)</span>  <span class="nx">报错</span><span class="err">（</span><span class="nx">存储容器</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span><span class="nx">逻辑运算符</span><span class="err">（</span><span class="nx">用于多个组合条件判断</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="nx">与</span> <span class="nx">或</span> <span class="nx">非</span>
+</span></span><span class="line"><span class="cl"><span class="o">&amp;&amp;</span> <span class="o">||</span>  <span class="err">！</span>
+</span></span><span class="line"><span class="cl"><span class="nx">表达式1</span> <span class="o">&amp;&amp;</span> <span class="nx">表达式2</span>    <span class="mi">1</span><span class="err">、</span><span class="mi">2</span><span class="nx">均为true就为true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">表达式1</span> <span class="o">||</span> <span class="nx">表达式2</span>    <span class="mi">1</span><span class="err">、</span><span class="mi">2</span><span class="nx">一个为true就为true</span>
+</span></span><span class="line"><span class="cl"><span class="o">!</span> <span class="nx">取反</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span><span class="nx">比较运算符</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&gt;</span><span class="err">、</span> <span class="o">&lt;</span><span class="err">、</span> <span class="o">&gt;=</span><span class="err">、</span> <span class="o">&lt;=</span><span class="err">、</span> <span class="o">==</span><span class="err">、</span> <span class="o">===</span><span class="err">、</span> <span class="o">!=</span><span class="err">、</span> <span class="o">!==</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">多一个</span><span class="o">=</span><span class="p">,</span><span class="nx">就是既比较类型也比较值</span><span class="err">，</span><span class="nx">优先比较类型</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">特殊说明</span><span class="err">（</span><span class="nx">了解</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">如果是</span><span class="s2">&#34;数字&#34;</span><span class="nx">和</span><span class="s2">&#34;其他值&#34;</span><span class="nx">的比较</span> <span class="nx">则其他值会自动转换成数</span>  <span class="nx">字去比较</span>
+</span></span><span class="line"><span class="cl"><span class="nx">涉及到</span><span class="s2">&#34;NAN&#34;</span><span class="nx">都是false</span> <span class="err">（</span><span class="kc">NaN</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="nx">如果是</span><span class="s2">&#34;字符串&#34;</span><span class="nx">和</span><span class="s2">&#34;字符串&#34;</span><span class="nx">比较</span> <span class="nx">则会每一个字符的ASCII码去进行比较</span><span class="p">,</span><span class="nx">同时是按位进行比较</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;azzz&#39;</span><span class="o">&lt;</span><span class="s1">&#39;b&#39;</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">如果是布尔值参与比较</span> <span class="nx">布尔值会转换成数字0和1</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">一元运算符</span><span class="err">：</span> <span class="nx">运算符的左右只有一个数据的时候</span> <span class="o">++</span> <span class="o">--</span>
+</span></span><span class="line"><span class="cl"><span class="nx">二元运算符</span><span class="err">：</span> <span class="nx">运算符的左右有两个个数据的时候</span> <span class="o">+</span> <span class="o">-</span> <span class="o">*</span> <span class="err">/ %</span>
+</span></span><span class="line"><span class="cl"><span class="nx">三元运算符</span><span class="err">：</span>  <span class="err">？</span> <span class="nx">表达式1</span><span class="err">：</span><span class="nx">表达式2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="kr">const</span> <span class="nx">num1</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">num2</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">num3</span> <span class="o">=</span> <span class="mi">30</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="nx">num1</span> <span class="o">&gt;</span> <span class="nx">num2</span> <span class="o">?</span> <span class="nx">num1</span> <span class="o">:</span> <span class="nx">num2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nx">num3</span> <span class="o">?</span> <span class="p">(</span><span class="nx">num1</span> <span class="o">&gt;</span> <span class="nx">num2</span> <span class="o">?</span> <span class="nx">num1</span> <span class="o">:</span> <span class="nx">num2</span><span class="p">)</span> <span class="o">:</span> <span class="nx">num3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">优先级</span><span class="err">：（</span><span class="nx">从高到低</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span><span class="err">（）</span><span class="nx">优先级最高</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span><span class="nx">一元运算符</span> <span class="o">++</span> <span class="o">--</span> <span class="err">！</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span><span class="nx">算数运算符</span> <span class="nx">先</span><span class="o">*</span> <span class="err">/ % 再 + -</span>
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span><span class="nx">关系运算符</span> <span class="o">&gt;</span> <span class="o">&gt;=</span> <span class="o">&lt;</span> <span class="o">&lt;=</span>
+</span></span><span class="line"><span class="cl"><span class="mf">5.</span><span class="nx">相等运算符</span> <span class="o">==</span> <span class="o">!=</span>  <span class="o">===</span>  <span class="o">!==</span>
+</span></span><span class="line"><span class="cl"><span class="mf">6.</span><span class="nx">逻辑运算符</span> <span class="nx">先</span><span class="o">&amp;&amp;</span> <span class="nx">后</span><span class="o">||</span>
+</span></span><span class="line"><span class="cl"><span class="mf">7.</span><span class="nx">赋值运算符</span>
+</span></span><span class="line"><span class="cl"><span class="nx">表达式长以优先级最低的分</span></span></span></code></pre></div></div><h3 id="js4-什么是深拷贝什么是浅拷贝">JS4 什么是深拷贝什么是浅拷贝</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">答</span><span class="o">:</span> <span class="nx">浅拷贝</span><span class="o">:</span> <span class="nx">拷贝对象的一层属性</span><span class="p">,</span><span class="nx">如果对象里面还有对象</span><span class="p">,</span><span class="nx">拷贝的是地址</span><span class="p">,</span> <span class="nx">两者之间修改会有影响</span><span class="p">,</span><span class="nx">适用于对象里面属性的值是简单数据类型的</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">深拷贝</span><span class="o">:</span> <span class="nx">拷贝对象的多层属性</span><span class="p">,</span><span class="nx">如果对象里面还有对象</span><span class="p">,</span><span class="nx">会继续拷贝</span><span class="p">,</span><span class="nx">使用递归去实现</span><span class="p">.</span></span></span></code></pre></div></div><h3 id="js5-如何实现深拷贝和浅拷贝">JS5 如何实现深拷贝和浅拷贝</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">答</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="nx">浅拷贝</span><span class="o">:</span>  <span class="c1">// 1.Object.assign() 浅拷贝(好多博客写错了!!) =&gt; React中常用!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 2. ES6 spread....操作符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">class</span><span class="o">:</span> <span class="s1">&#39;UI&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">age</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">love</span><span class="o">:</span> <span class="s1">&#39;eat&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">getObj</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">k</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">newObj</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">newObj</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nx">getObj</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">深拷贝</span><span class="o">:</span> <span class="nx">二深拷贝</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">对象</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">class</span><span class="o">:</span> <span class="s1">&#39;前端&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">age</span><span class="o">:</span> <span class="mi">26</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">love</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">friuts</span> <span class="o">:</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">meat</span><span class="o">:</span> <span class="s1">&#39;beef&#39;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="kd">function</span> <span class="nx">getObj</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">k</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* if (typeof obj[k] == &#39;object&#39;) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">          newObj[k] = getObj(obj[k])
+</span></span></span><span class="line"><span class="cl"><span class="cm">        } else {
+</span></span></span><span class="line"><span class="cl"><span class="cm">          newObj[k] = obj[k]
+</span></span></span><span class="line"><span class="cl"><span class="cm">        } */</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">newObj</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span> <span class="o">?</span> <span class="nx">getObj</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">k</span><span class="p">])</span> <span class="o">:</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">newObj</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nx">getObj</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj2</span><span class="p">)</span></span></span></code></pre></div></div><h3 id="js6-对闭包的理解并能举出闭包的例子实现数据私有化">JS6 对闭包的理解？并能举出闭包的例子（实现数据私有化）</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">答</span><span class="o">:</span> <span class="nx">闭包</span> <span class="nx">函数和声明该函数的词法环境的组合</span><span class="p">(</span><span class="nx">两个嵌套关系的函数</span><span class="p">,</span><span class="nx">内部函数可以访问外部函数定义的变量</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">闭包的优点</span><span class="err">：</span><span class="mi">1</span><span class="err">、</span><span class="nx">形成私有空间</span><span class="err">，</span><span class="nx">避免全局变量的污染</span>
+</span></span><span class="line"><span class="cl">               <span class="mi">2</span><span class="err">、</span><span class="nx">持久化内存</span><span class="err">，</span><span class="nx">保存数据</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">闭包的缺点</span><span class="err">：</span><span class="mi">1</span><span class="err">、</span><span class="nx">持久化内存</span><span class="err">，</span><span class="nx">导致内存泄露</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">解决</span><span class="err">：</span><span class="mi">1</span><span class="err">、</span><span class="nx">尽快避免函数的嵌套</span><span class="err">，</span><span class="nx">以及变量的引用</span>
+</span></span><span class="line"><span class="cl">         <span class="mi">2</span><span class="err">、</span><span class="nx">执行完的变量</span><span class="err">，</span><span class="nx">可以赋值null</span><span class="err">，</span><span class="nx">让垃圾回收机制</span><span class="err">，</span><span class="nx">进行回收释放内存</span><span class="err">（</span><span class="nx">当不在引用的变量</span><span class="err">、</span><span class="nx">对象</span><span class="err">，</span><span class="nx">垃圾回收机制就会回收</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"> <span class="err">（</span><span class="nx">函数执行时</span><span class="err">，</span><span class="nx">会为函数内部的局部变量</span><span class="err">，</span><span class="nx">开辟内存空间</span><span class="err">，</span><span class="nx">并在函数执行完成后</span><span class="err">，</span><span class="nx">释放这块存储空间</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="nx">垃圾回收机制</span><span class="err">：</span><span class="nx">常见的浏览器垃圾回收算法</span><span class="o">:</span> <span class="nx">引用计数</span> <span class="nx">和</span> <span class="nx">标记清除法</span>
+</span></span><span class="line"><span class="cl">     <span class="mi">1</span><span class="err">）</span><span class="nx">引用计数</span><span class="err">：</span><span class="nx">如果没有任何变量指向它了</span><span class="err">，</span><span class="nx">说明该对象已经不再需要了</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">         <span class="nx">缺点</span><span class="err">：</span><span class="nx">循环引用</span>
+</span></span><span class="line"><span class="cl">     <span class="mi">2</span><span class="err">）</span><span class="nx">标记清除法</span><span class="err">：</span><span class="nx">在JS中就是全局出发定时扫描内存中的对象</span><span class="err">，</span>
+</span></span><span class="line"><span class="cl">         <span class="nx">无法触及的对象</span><span class="err">，</span><span class="nx">就会背回收</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl">         
+</span></span><span class="line"><span class="cl"><span class="nx">例</span><span class="o">:</span> <span class="nx">点击li获取当前下标</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="mi">111</span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="mi">222</span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="mi">333</span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="mi">444</span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="mi">555</span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">lis</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">lis</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">lis</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})(</span><span class="nx">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span></span></span></code></pre></div></div><div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">    <span class="kd">function</span> <span class="nx">addCount</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="kd">function</span> <span class="nx">add</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;调用了&#39;</span><span class="o">+</span><span class="nx">count</span> <span class="o">+</span> <span class="s1">&#39;次&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="nx">add</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>  <span class="c1">//在闭包中，返回一个引用类型时，这块闭包的空间就不会释放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kd">let</span> <span class="nx">addFn</span> <span class="o">=</span> <span class="nx">addCount</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">addFn</span><span class="p">()</span><span class="c1">//1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">addFn</span><span class="p">()</span><span class="c1">//2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">addFn</span> <span class="o">=</span> <span class="kc">null</span> <span class="c1">//解决内存泄漏
+</span></span></span></code></pre></div></div><h3 id="js7-什么是原型和原型链">JS7 什么是原型和原型链</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">答</span><span class="o">:</span> <span class="nx">原型</span><span class="o">:</span> <span class="nx">函数都有prototype属性</span><span class="p">,</span><span class="nx">这个属性的值是个对象</span><span class="p">,</span><span class="nx">称之为原型</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">原型链</span><span class="o">:</span> <span class="nx">对象都有__proto__属性</span><span class="p">,</span><span class="nx">这个属性指向它的原型对象</span><span class="p">,</span><span class="nx">原型对象也是对象</span><span class="p">,</span><span class="nx">也有__proto__属性</span><span class="p">,</span><span class="nx">指向原型对象的原型对象</span><span class="p">,</span><span class="nx">这样一层一层形成的链式结构称为原型链</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">   <span class="nx">实例对象</span><span class="p">.</span><span class="sb">`__proto__`</span>  <span class="o">===</span> <span class="nx">构造函数</span><span class="p">.</span><span class="nx">prototype</span> <span class="p">(</span><span class="nx">相等</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nx">面试题</span><span class="err">：</span> <span class="kd">function</span> <span class="nx">Person</span><span class="p">()</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">		   <span class="kd">let</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span>   <span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Person</span><span class="p">)</span> <span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Person</span><span class="p">)</span> <span class="c1">//true
+</span></span></span></code></pre></div></div><p></p>]]></description>
 </item>
 </channel>
 </rss>
